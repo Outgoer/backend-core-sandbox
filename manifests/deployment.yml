@@ -1,7 +1,7 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: outgoerbackendcoresandbox 
+  name: outgoerbackendcoresandbox
 spec:
   replicas: 1
   selector:
@@ -10,10 +10,13 @@ spec:
   template:
     metadata:
       labels:
-        app: outgoerbackendcoresandbox 
+        app: outgoerbackendcoresandbox
     spec:
       containers:
-        - name: outgoerbackendcoresandbox 
+        - name: outgoerbackendcoresandbox
+          env:
+            - name: APACHE_SERVER_NAME
+              value: "localhost"
           image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
           ports:
-          - containerPort: 80
+            - containerPort: 80
