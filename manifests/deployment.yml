@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: outgoerbackendcoresandbox 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: outgoerbackendcoresandbox
+  template:
+    metadata:
+      labels:
+        app: outgoerbackendcoresandbox 
+    spec:
+      containers:
+        - name: outgoerbackendcoresandbox 
+          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
+          ports:
+          - containerPort: 80
