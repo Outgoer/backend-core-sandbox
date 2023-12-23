@@ -33,7 +33,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-RUN service apache2 restart
+# RUN service apache2 restart
 
 # Expose port
 EXPOSE 80
