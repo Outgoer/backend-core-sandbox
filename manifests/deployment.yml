@@ -18,5 +18,8 @@ spec:
             - name: APACHE_SERVER_NAME
               value: "localhost"
           image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
+          envFrom:
+            - configMapRef:
+                name: laravel-config
           ports:
             - containerPort: 80

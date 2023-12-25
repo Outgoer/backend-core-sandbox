@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\HealthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use App\Http\Controllers\HelloWorldController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/health', [HealthController::class, 'check']);
 
 Route::get('/hello-world', [HelloWorldController::class, 'helloWorld']);
 
