@@ -15,11 +15,10 @@ spec:
       containers:
         - name: outgoerbackendcoresandbox
           env:
+            - name: APP_KEY
+              value: base64:Jd9Tkt7uuZDy/JOcOl7QUiPTNuF7Jbu59vRyIALMgbM=
             - name: APACHE_SERVER_NAME
               value: "localhost"
-          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
-          envFrom:
-            - configMapRef:
-                name: laravel-config
+          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox                
           ports:
             - containerPort: 80
