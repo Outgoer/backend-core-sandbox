@@ -20,7 +20,8 @@ spec:
             - name: APACHE_SERVER_NAME
               value: "localhost"
             - name: AZURE_MYSQL_HOST
-              value: outgoer-mysql-dev.mysql.database.azure.com
+              value: "mysql"
+              #value: outgoer-mysql-dev.mysql.database.azure.com
             - name: AZURE_MYSQL_PORT
               value: "3306"
             - name: AZURE_MYSQL_DATABASE
