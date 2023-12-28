@@ -25,9 +25,9 @@ spec:
             - name: AZURE_MYSQL_PORT
               value: "3306"
             - name: AZURE_MYSQL_DATABASE
-              value: outgoer_db_dev
+              value: "outgoer_db_dev"
             - name: AZURE_MYSQL_USERNAME
-              value: outgoerdevuser
+              value: "outgoerdevuser@outgoer-mysql-dev"
             - name: AZURE_MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
