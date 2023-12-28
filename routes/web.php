@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\HealthController;
+use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -19,6 +21,18 @@ use App\Http\Controllers\HealthController;
 Route::get('/health', [HealthController::class, 'check']);
 
 Route::get('/hello-world', [HelloWorldController::class, 'helloWorld']);
+
+Route::get('/test-azure-mysql-connection', function () {
+    try {
+        // Try to establish a connection
+        DB::connection('mysql_azure')->getPdo();
+
+        return 'Successfully connected to Azure MySQL!';
+    } catch (\Exception $e) {
+        // Handle connection failure gracefully
+        return 'Failed to connect to Azure MySQL. Error: ' . $e->getMessage();
+    }
+});
 
 Route::get('/', function () {
     return view('welcome');

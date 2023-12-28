@@ -19,6 +19,28 @@ spec:
               value: base64:Jd9Tkt7uuZDy/JOcOl7QUiPTNuF7Jbu59vRyIALMgbM=
             - name: APACHE_SERVER_NAME
               value: "localhost"
+            - name: AZURE_MYSQL_HOST
+              value: outgoer-mysql-dev.mysql.database.azure.com
+            - name: AZURE_MYSQL_PORT
+              value: "3306"
+            - name: AZURE_MYSQL_DATABASE
+              value: outgoer_db_dev
+            - name: AZURE_MYSQL_USERNAME
+              value: outgoer_user
+            - name: AZURE_MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password
           image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox                
           ports:
             - containerPort: 80
+          resources:
+            limits:
+              cpu: "0.5"  # Limit CPU usage to 0.5 cores
+              memory: "512Mi"  # Limit memory usage to 512 MiB
+            requests:
+              cpu: "0.1"  # Initial CPU request
+              memory: "256Mi"  # Initial memory request
+
+

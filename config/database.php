@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql_azure'),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,6 +34,23 @@ return [
     */
 
     'connections' => [
+
+
+
+        'mysql_azure' => [
+            'driver' => 'mysql',
+            'host' => env('AZURE_MYSQL_HOST', 'your-azure-mysql-host'),
+            'port' => env('AZURE_MYSQL_PORT', '3306'),
+            'database' => env('AZURE_MYSQL_DATABASE', 'your-azure-mysql-database'),
+            'username' => env('AZURE_MYSQL_USERNAME', 'your-azure-mysql-username'),
+            'password' => env('AZURE_MYSQL_PASSWORD', 'your-azure-mysql-password'),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        
 
         'sqlite' => [
             'driver' => 'sqlite',
