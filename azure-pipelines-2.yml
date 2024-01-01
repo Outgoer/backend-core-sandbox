@@ -12,8 +12,8 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'a50c0c62-3a8f-4772-ac5d-da55ef945c99'
-  #imageRepository: 'outgoerbackendcoresandbox'
-  imageRepository: 'backendcoresandboxacr'
+  imageRepository: 'outgoerbackendcoresandbox'
+  #imageRepository: 'backendcoresandboxacr'
   containerRegistry: 'backendcoresandboxacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
