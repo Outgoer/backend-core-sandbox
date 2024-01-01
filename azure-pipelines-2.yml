@@ -103,6 +103,8 @@ stages:
                 $(Pipeline.Workspace)/manifests/service.yml
                 $(Pipeline.Workspace)/manifests/db_service.yml
                 $(Pipeline.Workspace)/manifests/db_secret.yml
+                $(Pipeline.Workspace)/manifests/storage_class.yml
+                $(Pipeline.Workspace)/manifests/storage_pvc.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
