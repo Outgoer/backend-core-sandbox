@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: outgoerbackendcoresandbox
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: outgoerbackendcoresandbox
@@ -33,15 +33,20 @@ spec:
                 secretKeyRef:
                   name: mysql-db-password
                   key: db-password
-          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox                
+          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: outgoer-azurefile-volume
+              mountPath: "/var/www/html/storage"
           resources:
             limits:
-              cpu: "0.5"  # Limit CPU usage to 0.5 cores
-              memory: "512Mi"  # Limit memory usage to 512 MiB
+              cpu: "0.5" # Limit CPU usage to 0.5 cores
+              memory: "512Mi" # Limit memory usage to 512 MiB
             requests:
-              cpu: "0.1"  # Initial CPU request
-              memory: "256Mi"  # Initial memory request
-
-
+              cpu: "0.1" # Initial CPU request
+              memory: "256Mi" # Initial memory request
+      volumes:
+        - name: outgoer-azurefile-volume
+          persistentVolumeClaim:
+            claimName: outgoer-azurefile-pvc

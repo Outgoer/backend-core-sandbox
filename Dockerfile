@@ -37,11 +37,3 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Expose port
 EXPOSE 80
-
-# Run your application on port 80
-# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
-
-
-
-# docker build -t acr-app2:v1 .
-# docker run -p 8000:80 acr-app2:v1 
