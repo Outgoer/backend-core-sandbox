@@ -105,7 +105,7 @@ stages:
                 $(Pipeline.Workspace)/manifests/db_secret.yml
                 $(Pipeline.Workspace)/manifests/storage_class.yml
                 $(Pipeline.Workspace)/manifests/storage_pvc.yml
-                $(Pipeline.Workspace)/manifests/rbac.yml
+#               $(Pipeline.Workspace)/manifests/rbac.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
