@@ -10,6 +10,6 @@ class HelloWorldController extends Controller
 {
     public function helloWorld(): JsonResponse
     {
-        return response()->json(['message' => 'Hello, World!']);
+        return response()->json(['message' => 'Hello, World! Test release']);
     }
 }
