@@ -34,8 +34,7 @@ spec:
                   name: mysql-db-password
                   key: db-password
           #image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox:latest
-          image: backendcoresandboxacr.azurecr.io/backendcoresandboxacr
-
+          image: backendcoresandboxacr.azurecr.io/outgoerbackendcoresandbox
           ports:
             - containerPort: 80
           # volumeMounts:
