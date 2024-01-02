@@ -33,6 +33,7 @@ stages:
         tags: |
           $(tag)
           $(Build.SourceVersion)
+          latest
 ## Publish Artifacts pipeline code in addition to Build and Push          
     - bash: echo Contents in System Default Working Directory; ls -R $(System.DefaultWorkingDirectory)        
     - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)        
